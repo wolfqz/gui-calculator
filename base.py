@@ -26,15 +26,16 @@ def operation():
         try:
             result=n1/n2
         except ZeroDivisionError:
-            label1=Label(root,text="Zero Divison Error")
-            label1.grid(row=2,column=1)
-            print("Error: Zero Division Error")
-            quit()
+            result="Zero Division Error"
     else:
-        label2=Label(root,text="Invalid Operator")
+        label1=Label(root,text="Invalid Operator")
+        label1.grid(row=2,column=1)
+    if result != "Zero Division Error":
+        label=Label(root, text="The result is "+str(result))
+        label.grid(row=2, column=1)
+    else:
+        label2=Label(root,text="Zero Division Error")
         label2.grid(row=2,column=1)
-    label=Label(root, text="The result is "+str(result))
-    label.grid(row=2, column=1)
 b=Button(root, text="Calculate", command=operation)
 b.grid(row=1, column=1)
 root.mainloop()
