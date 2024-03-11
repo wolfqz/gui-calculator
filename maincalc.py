@@ -1,6 +1,7 @@
 from tkinter import *
 
 root = Tk()
+root.title("Calculator")
 tab = Entry(root, width=30)
 tab.grid(row=0, column=0, columnspan=4)
 
