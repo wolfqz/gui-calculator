@@ -23,7 +23,16 @@ def operation():
     elif operator == "*":
         result=n1*n2
     elif operator == "/":
-        result=n1/n2
+        try:
+            result=n1/n2
+        except ZeroDivisionError:
+            label1=Label(root,text="Zero Divison Error")
+            label1.grid(row=2,column=1)
+            print("Error: Zero Division Error")
+            quit()
+    else:
+        label2=Label(root,text="Invalid Operator")
+        label2.grid(row=2,column=1)
     label=Label(root, text="The result is "+str(result))
     label.grid(row=2, column=1)
 b=Button(root, text="Calculate", command=operation)
